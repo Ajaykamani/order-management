@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cts.training.SeriesModelService.model.Models;
-import com.cts.training.SeriesModelService.model.Series;
-import com.cts.training.ServiceModelService.service.SeriesModelService;
+//import com.cts.training.SeriesModelService.model.Models;
+//import com.cts.training.SeriesModelService.model.Series;
+import com.cts.training.SeriesModelService.service.SeriesModelService;
+import com.cts.training.entities.Entities.Models.Models;
 
+import io.swagger.annotations.Api;
+@Api
 @RestController
 public class SeriesModelController {
 	
@@ -21,7 +24,7 @@ public class SeriesModelController {
 	
 	
 	@GetMapping("/series")
-	public List<Series> getSeries(){
+	public List<com.cts.training.entities.Entities.Models.Series> getSeries(){
 		
 		return seriesmodelservice.getSeries();
 		

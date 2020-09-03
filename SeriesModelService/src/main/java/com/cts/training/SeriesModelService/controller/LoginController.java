@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cts.training.SeriesModelService.model.User;
-import com.cts.training.SeriesModelService.model.UserModel;
+//import com.cts.training.SeriesModelService.model.User;
+//import com.cts.training.SeriesModelService.model.UserModel;
 import com.cts.training.SeriesModelService.repository.UserRepository;
+import com.cts.training.entities.Entities.Models.User;
+import com.cts.training.entities.Entities.Models.UserModel;
 
 
 
