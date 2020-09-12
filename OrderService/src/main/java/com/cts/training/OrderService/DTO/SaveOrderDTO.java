@@ -2,7 +2,9 @@ package com.cts.training.OrderService.DTO;
 
 import java.util.List;
 
-import com.cts.training.OrderService.model.OrderColorAccessory;
+import com.cts.training.OrderService.model.OrderAccessory;
+import com.cts.training.OrderService.model.OrderColor;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,9 +18,13 @@ import lombok.ToString;
 @NoArgsConstructor
 public class SaveOrderDTO {
 	
-	private long modelId;
+	private long userId;
 	private long seriesId;
-	private long price;
-	private List<OrderColorAccessory> ordercoloraccessories;
+	private String seriesName;
+	private long modelId;
+	private String modelName;
+	private long totalPrice;
+	private List<OrderColor> colorsSelected;
+	private List<OrderAccessory> accessoriesSelected;
 
 }

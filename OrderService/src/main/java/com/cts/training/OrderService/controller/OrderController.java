@@ -20,11 +20,11 @@ public class OrderController {
 	private	OrderService orderService;
 	@PostMapping("/saveorder")
 	public void placeOrder(@RequestBody SaveOrderDTO saveOrderDTO)  {
-		orderService.saveOrder(saveOrderDTO);		
+		orderService.placeOrder(saveOrderDTO);		
 	}
 	
-	@GetMapping("allorders")
-	public List<OrderDetails> getAllOrders() {
+	@GetMapping("/allorders")
+	public SaveOrderDTO getAllOrders() {
 		return orderService.getAllOrders();
 	}
 	

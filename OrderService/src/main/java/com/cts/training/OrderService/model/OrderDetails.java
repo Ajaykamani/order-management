@@ -3,7 +3,6 @@ package com.cts.training.OrderService.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-//import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,31 +16,39 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-@Getter
+
 @Setter
-@ToString
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
-@Table(name="orderdetails")
+@Table(name="order_details")
 public class OrderDetails {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="order_Id")
+	@Column(name = "orderid")
 	private long orderId;
-	
-	@Column(name="series_Id")
+	@Column(name = "seriesid")
 	private long seriesId;
-	
-	@Column(name="model_Id")
+	@Column(name = "seriesname")
+	private String seriesName;
+	@Column(name = "modelid")
 	private long modelId;
+	@Column(name = "modelname")
+	private String modelName;
+	@Column(name = "totalprice")
+	private long totalPrice;
+	@Column(name = "userid")
+	private long userId;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_order_id", referencedColumnName = "orderid")
+	private List<OrderAccessory> orderAccessory;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_order_id", referencedColumnName = "orderid")
+	private List<OrderColor> orderColor;
 	
-	@Column(name="totalPrice")
-	private long price;
 	
-	@OneToMany(targetEntity = OrderColorAccessory.class,cascade = CascadeType.ALL)
-	@JoinColumn(name="order_id" ,referencedColumnName = "order_id")
-	private List<OrderColorAccessory> ordercoloraccessories;
 
 }
